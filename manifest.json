@@ -1,0 +1,24 @@
+{
+    "manifest_version": 3,
+    "name": "YouTube Chat Assistant",
+    "version": "1.0",
+    "description": "Injects a Chat UI on YouTube video pages.",
+    "permissions": ["activeTab", "scripting"],
+    "background": {
+      "service_worker": "background.js"
+    },
+    "content_scripts": [
+      {
+        "matches": ["https://www.youtube.com/watch?v=*"],
+        "js": ["content.js"]
+      }
+    ],
+    "action": {
+      "default_popup": "popup.html",
+      "default_icon": "/images/icon16.png"
+    },
+    "host_permissions": [
+      "https://api.gemini.com/*"
+    ]
+  }
+  
